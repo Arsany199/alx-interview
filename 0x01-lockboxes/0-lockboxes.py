@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""function that determines if a box containing a list can be opened using keys"""
+"""function that determines if box containing list can be opened using keys"""
 
 
 def canUnlockAll(boxes):
