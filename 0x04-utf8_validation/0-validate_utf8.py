@@ -20,6 +20,6 @@ def validUTF8(data):
             if not binari.startswith('10'):
                 return (False)
             mycount = mycount - 1
-    if mycount != 0:
+    if not (mycount == 0):
         return (False)
     return (True)
