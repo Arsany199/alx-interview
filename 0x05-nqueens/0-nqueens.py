@@ -1,43 +1,44 @@
 #!/usr/bin/python3
-"""model of the n queen problem"""
+""" N queens """
 import sys
+
 
 if len(sys.argv) > 2 or len(sys.argv) < 2:
     print("Usage: nqueens N")
-    exit(1)
-
-if int(sys.argv[1]) < 4:
-    print("N must be at least 4")
     exit(1)
 
 if not sys.argv[1].isdigit():
     print("N must be a number")
     exit(1)
 
+if int(sys.argv[1]) < 4:
+    print("N must be at least 4")
+    exit(1)
+
 n = int(sys.argv[1])
 
 
-def find(n, i=0, x=[], y=[], z=[]):
-    """function to find the possible positions for the queen"""
+def queens(n, i=0, a=[], b=[], c=[]):
+    """ find possible positions """
     if i < n:
         for j in range(n):
-            if j not in x and i + j not in y and i - j not in z:
-                yield from find(n, i + 1, x + [j], y + [i + j], z + [i - j])
+            if j not in a and i + j not in b and i - j not in c:
+                yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
     else:
-        yield (x)
+        yield a
 
 
-def answer(n):
-    """function to solve the n queen"""
-    key = []
+def solve(n):
+    """ solve """
+    k = []
     i = 0
-    for sol in find(n, 0):
-        for s in sol:
-            key.append([i, s])
-            i = i + 1
-        print(key)
-        key = []
+    for solution in queens(n, 0):
+        for s in solution:
+            k.append([i, s])
+            i += 1
+        print(k)
+        k = []
         i = 0
 
 
-answer(n)
+solve(n)
