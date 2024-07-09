@@ -1,8 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
+const url = 'https://swapi-api.hbtn.io/api/films/'
 
-request('https://swapi-api.hbtn.io/api/films/' + process.argv[2], function (err, res, body) {
+request(url + process.argv[2], function (err, res, body) {
   if (err) throw err;
   const actors = JSON.parse(body).characters;
   exactOrder(actors, 0);
