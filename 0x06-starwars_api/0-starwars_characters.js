@@ -5,14 +5,14 @@ const url = 'https://swapi-api.hbtn.io/api/films/';
 
 request(url + process.argv[2], function (err, res, body) {
   if (err) throw err;
-  const actors = JSON.parse(body).characters;
-  exactOrder(actors, 0);
+  const myactors = JSON.parse(body).characters;
+  exactOrder(myactors, 0);
 });
-const exactOrder = (actors, x) => {
-  if (x === actors.length) return;
-  request(actors[x], function (err, res, body) {
+const exactOrder = (myactors, x) => {
+  if (x === myactors.length) return;
+  request(myactors[x], function (err, res, body) {
     if (err) throw err;
     console.log(JSON.parse(body).name);
-    exactOrder(actors, x + 1);
+    exactOrder(myactors, x + 1);
   });
 };
