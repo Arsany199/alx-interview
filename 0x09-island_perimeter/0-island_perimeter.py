@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""module to measure perimeter if island"""
+
+
 def island_perimeter(grid):
     """function to return the perimeter of an island"""
     row = len(grid)
