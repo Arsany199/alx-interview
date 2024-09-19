@@ -7,17 +7,17 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    remaining = total
-    count = 0
+    myremaining = total
+    mycount = 0
     idx = 0
     sort = sorted(coins, reverse=True)
     n = len(coins)
-    while remaining > 0:
+    while myremaining > 0:
         if idx >= n:
             return -1
-        if remaining - sort[idx] >= 0:
-            remaining -= sort[idx]
-            count = count + 1
+        if myremaining - sort[idx] >= 0:
+            myremaining -= sort[idx]
+            mycount = mycount + 1
         else:
             idx = idx + 1
-    return (count)
+    return (mycount)
