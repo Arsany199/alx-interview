@@ -4,12 +4,12 @@
 
 def island_perimeter(grid):
     """function to return the perimeter of an island"""
-    row = len(grid)
-    col = len(grid[0])
+    myrow = len(grid)
+    mycol = len(grid[0])
     perm = 0
 
-    for i in range(row):
-        for j in range(col):
+    for i in range(myrow):
+        for j in range(mycol):
             if grid[i][j] == 1:
                 perm = perm + 4
 
