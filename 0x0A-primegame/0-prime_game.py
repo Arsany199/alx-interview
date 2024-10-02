@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""module of prime game"""
+"""module for the prime game"""
 
 
 def isWinner(x, nums):
-    """determines the winner of a prime game session in some rounds"""
+    """function that determine winner in prime game session in some rounds"""
     if x < 1 or not nums:
         return None
     marias_win = 0
